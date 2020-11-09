@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MUPDefinition xsi:schemaLocation="http://schemas.dell.com/openmanage/cm/2/3/mupdefinition.xsd mupdefinition.xsd" xmlns="http://schemas.dell.com/openmanage/cm/2/0/mupdefinition.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<packageinformation>
+		<name>DellTouchPad</name>
+		<version>8.1200.101.217</version>
+		<installertype>custom</installertype>
+		<packagegrouping>single_package</packagegrouping>
+		<packagingtype>executable</packagingtype>
+		<releasetype>DRVR</releasetype>
+		<mupspecificationversion>2.3.0</mupspecificationversion>
+		<supportedoperatingsystems>
+			<!--Delete the osidentifier element for each unsupported.  -->
+			<osidentifier name="XP" architecture="x86"/>
+			<osidentifier name="XP" architecture="x64"/>
+			<osidentifier name="Vista" architecture="x86"/>
+			<osidentifier name="Vista" architecture="x64"/>
+			<osidentifier name="Windows7" architecture="x86"/>
+			<osidentifier name="Windows7" architecture="x64"/>
+			<osidentifier name="Windows8" architecture="x86"/>
+			<osidentifier name="Windows8" architecture="x64"/>
+		</supportedoperatingsystems>
+	</packageinformation>
+	<executable>
+		<executablename>setup.exe</executablename>
+	</executable>
+	<behaviors>
+		<!-- Delete the behavior element for each unsupported behavior -->
+		<behavior name="attended">
+		</behavior>
+		<behavior name="unattended">
+			<vendoroption>
+				<optionvalue switch="/" requiresvalue="false">s</optionvalue>
+			</vendoroption>
+		</behavior>
+		<behavior name="help">
+			<vendoroption>
+				<optionvalue switch="/" requiresvalue="false">?</optionvalue>
+			</vendoroption>
+		</behavior>
+		<behavior name="extractdrivers">
+			<vendoroption>
+				<container>
+					<containervalue switch="/" requiresvalue="false" enclose="&quot;">v</containervalue>
+					<optionvalue switch="" valuedelimiter="=" requiresvalue="true">EXTRACTDRIVERS</optionvalue>
+				</container>
+			</vendoroption>
+		</behavior>
+		<behavior name="freshinstall">
+			<vendoroption>
+				<container>
+					<containervalue switch="/" requiresvalue="false" enclose="&quot;">v</containervalue>
+					<optionvalue switch="" requiresvalue="false">FRESHINSTALL=true</optionvalue>
+				</container>
+			</vendoroption>
+		</behavior>
+	</behaviors>
+	<parameters>
+		<!-- Delete the parametermapping element for each unsupported parameter -->
+		<parametermapping name="logfile">
+			<vendoroption>
+				<container>
+					<containervalue switch="/" requiresvalue="false" enclose="&quot;">v</containervalue>
+					<optionvalue switch="" valuedelimiter="=" requiresvalue="true">LOGFILE</optionvalue>
+				</container>
+			</vendoroption>
+		</parametermapping>
+		<parametermapping name="force">
+			<vendoroption>
+				<optionvalue switch="/v" requiresvalue="false">"FORCE=true"</optionvalue>
+			</vendoroption>
+		</parametermapping>
+	</parameters>
+	<returncodes>
+		<!-- remove the returncodemapping element for each return code that is not supported by the MUP -->
+		<returncodemapping name="SUCCESS">
+			<vendorreturncode>0</vendorreturncode>
+		</returncodemapping>
+		<returncodemapping name="ERROR">
+			<vendorreturncode>1603</vendorreturncode>
+		</returncodemapping>
+		<returncodemapping name="ERROR_INSTALL_PLATFORM_UNSUPPORTED">
+			<vendorreturncode>1633</vendorreturncode>
+		</returncodemapping>
+		<returncodemapping name="DEP_HARD_ERROR">
+			<vendorreturncode>4</vendorreturncode>
+		</returncodemapping>
+		<returncodemapping name="DEP_SOFT_ERROR">
+			<vendorreturncode>3</vendorreturncode>
+		</returncodemapping>
+		<returncodemapping name="REBOOT_REQUIRED">
+			<vendorreturncode>1641</vendorreturncode>
+		</returncodemapping>
+		<returncodemapping name="UNKNOWN_OPTION">
+			<vendorreturncode>1608</vendorreturncode>
+		</returncodemapping>
+	</returncodes>
+	<inventorymetadata>
+		<extractdriversidentifier>
+			<pnpids>
+				<pnpdevice>
+					<pnpidstring/>
+				</pnpdevice>
+			</pnpids>
+			<msis>
+				<msi>
+		</msi>
+			</msis>
+			<registrykeys>
+				<registrykey>
+					<name/>
+					<value/>
+				</registrykey>
+			</registrykeys>
+			<softwareidentityinstances>
+				<softwareidentity>
+				<elementname/>
+				<versionstring/>
+					<identityinfo>
+						<value></value>
+						<type/>
+					</identityinfo>
+					</softwareidentity>
+			</softwareidentityinstances>
+		</extractdriversidentifier>
+		<fullpackageidentifier>
+			<pnpids>
+				<pnpdevice>
+					<pnpidstring/>
+				</pnpdevice>
+			</pnpids>
+			<msis>
+				<msi>
+			</msi>
+			</msis>
+			<registrykeys>
+				<registrykey>
+					<name/>
+					<value/>
+				</registrykey>
+			</registrykeys>
+			<softwareidentityinstances>
+				<softwareidentity>
+				<elementname/>
+				<versionstring/>
+					<identityinfo>
+						<value></value>
+						<type/>
+					</identityinfo>
+				</softwareidentity>
+			</softwareidentityinstances>
+		</fullpackageidentifier>
+	</inventorymetadata>
+</MUPDefinition>
